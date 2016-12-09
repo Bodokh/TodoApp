@@ -10,4 +10,4 @@ The app will automatically reload if you change any of the source files.
 
 ## Live demo
 You can also just view the live demo here:
-[Todo App demo](http://bodokh.github.io/todoApp)
+[Todo App demo](http://bodokh.github.io/TodoApp)
