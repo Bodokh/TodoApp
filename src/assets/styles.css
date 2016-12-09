@@ -1,0 +1,333 @@
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
+
+.condensed{
+  font-family: 'Roboto Condensed','Open Sans Hebrew Condensed','Roboto','Open Sans Hebrew','Helvetica Neue', Helvetica, Arial, sans-serif;;
+}
+html,body,h1,h2,h3,h4,h5,h6,p,a,label,button,text,textarea,div,span{
+  font-family: 'Roboto','Open Sans Hebrew','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+body,html{
+  background: #E8EAF6;
+}
+.container{
+    margin-top: 24px;
+}
+.mainh{
+  color:#fff;
+  background: #3F51B5;
+}
+.mainh h1{
+   margin:0;
+   padding:24px;
+   text-align:center; 
+   font-weight: 300;
+  }
+
+input {
+  width: 100%;
+  border:none;
+  padding:6px;
+  font-size:18px;
+  background: #fafafa;
+  float: left; 
+   }
+/*Clearing Floats*/
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+.cf {
+    zoom:1;
+}
+
+    /* Flexbox Example */
+    .flexbox { display: flex; }
+    .flexbox .stretch { flex: 1; }
+    .flexbox .normal { flex: 0; margin: 0; }
+    .flexbox div input { padding: .5em 1em; width: 100%; }
+    .flexbox div button {  white-space: nowrap; }
+
+/* Form wrapper styling */
+.form-wrapper {
+    width: 100%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+.content{
+    font-weight: bold;
+}
+.dateAdded{
+    float:right;
+}
+.btnDelete{
+    cursor: pointer;
+    position: absolute;
+    right:-60px;
+    width:60px;
+    top:0;
+    bottom:0;
+    border: none;
+    font-size:20px;padding:0 20px;
+    transition:all .2s;
+    background: #eee;
+    color:#B71C1C;
+    outline: none;
+}
+.control-label{
+    font-weight: bold;
+}
+.btnEdit{
+    cursor: pointer;
+    position: absolute;
+    right:-60px;
+    top:0;width:60px;
+    bottom:0;
+    border: none;
+    font-size:20px;padding:0 20px;
+    transition:all .2s;
+    background-color: #eee;
+    color:#444;
+    outline: none;
+}
+.btnDelete:hover{
+    background-color: #FFEBEE;
+}
+.btnEdit:hover{
+    background-color: #d5d5d5;
+}
+/* Form text input */
+.list-item{
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .2s;
+    position: relative;
+  background: #fafafa;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.item{
+  padding: 16px;
+    transition: all .2s;
+  border-bottom: 1px solid #ddd;  
+}
+.item .content{
+  transition: all .2s;
+}
+.list-item:hover .btnDelete{
+    right:0;
+}
+.list-item:hover .btnEdit{
+    right:60px;
+}
+.list-item::nth-child(n){
+      border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.item.checked{
+  text-decoration: line-through;
+  color:#888;
+  background: #ccc;
+  border-bottom: #ccc;
+}
+.item.checked .content{
+  color:#888;
+  padding-left: 32px;
+}
+.item.checked .content::before{
+  position: absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  font-family: 'Fontawesome';
+  content:'\f00c \00a0';
+  font-size:22px;
+  line-height: 52px;
+  color:#888;
+  padding-left:16px;
+}
+.list-item:hover{
+  padding-right: 120px;
+}
+.form-wrapper input {
+    height: 100%;
+    padding: 10px 5px;
+    border: 0;
+    background: #fafafa;
+}
+
+.form-wrapper input:focus {
+    outline: 0;
+    background: #f7f7f7;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}   
+
+/* Form submit button */
+.form-wrapper button {
+    overflow: visible;
+    position: relative;
+    border: 0;
+    padding: 0;
+    font-size:20px;
+    cursor: pointer;
+    height: 60px;
+    padding:0 20px;
+    color: #333;
+    text-transform: uppercase;
+    background: #ddd;
+    outline: none;
+}  
+
+.form-wrapper button:hover {    
+    background: #dfdfdf;
+}  
+
+
+.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+    border: 0;
+    padding: 0;
+}    
+
+my-app:empty + .spinwrap{
+    margin-top: -86px;
+	height:100vh;
+}
+.spinwrap {
+	overflow:hidden;
+		height:0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}

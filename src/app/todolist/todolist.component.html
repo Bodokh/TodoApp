@@ -1,0 +1,33 @@
+<div class="cf flexbox form-wrapper">
+    <div class="stretch">
+        <input (keyup.enter)="addNewAction()" [(ngModel)]="newItem" type="text" />
+    </div>
+    <div class="normal">
+        <button (click)="addNewAction()" type="button"><i class="fa fa-plus"></i></button>
+    </div>
+</div>
+<div class="list" *ngIf="todolist">
+    <div class="list-item" *ngFor="let todoitem of todolist">
+        <div (click)="checkItem(todoitem)" [class.checked]="todoitem.isComplete" class="item">
+            <span class="content">{{todoitem.content}}</span>
+            <span class="dateAdded">{{todoitem.dateAdded | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+        </div>
+        <button (click)="editItem(todoitem)" class="btnEdit"><i class="fa fa-pencil"></i></button>
+        <button (click)="deleteItem(todoitem)" class="btnDelete"><i class="fa fa-trash"></i></button>
+    </div>
+</div>
+<modal #editModal>
+    <modal-header>
+        <h4 class="modal-title">I'm a modal!</h4>
+    </modal-header>
+    <modal-body>
+        <div *ngIf="selectedItem" class="form-group">
+            <label class="control-label">Todo Task</label>
+            <input type="text" class="form-control" [(ngModel)]="selectedItem.content" />
+        </div>
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="revertAndClose()">Cancel</button>
+        <button type="submit" class="btn btn-primary" (click)="saveAndClose()">Ok</button>
+    </modal-footer>
+</modal>
