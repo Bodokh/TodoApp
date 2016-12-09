@@ -1,3 +1,4 @@
+<button [class.edActive]="editMode" (click)="editMode = !editMode" class="btn btn-primary btn-lg btn-block visible-xs">EDIT MODE &nbsp;<i class="fa fa-pencil"></i></button>
 <div class="cf flexbox form-wrapper">
     <div class="stretch">
         <input (keyup.enter)="addNewAction()" [(ngModel)]="newItem" type="text" />
@@ -7,10 +8,10 @@
     </div>
 </div>
 <div class="list" *ngIf="todolist">
-    <div class="list-item" *ngFor="let todoitem of todolist">
+    <div [class.mobHov]="editMode" class="list-item" *ngFor="let todoitem of todolist">
         <div (click)="checkItem(todoitem)" [class.checked]="todoitem.isComplete" class="item">
             <span class="content">{{todoitem.content}}</span>
-            <span class="dateAdded">{{todoitem.dateAdded | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+            <span class="dateAdded">{{todoitem.dateAdded | date: 'dd/MM HH:mm'}}</span>
         </div>
         <button (click)="editItem(todoitem)" class="btnEdit"><i class="fa fa-pencil"></i></button>
         <button (click)="deleteItem(todoitem)" class="btnDelete"><i class="fa fa-trash"></i></button>

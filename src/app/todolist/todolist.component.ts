@@ -10,14 +10,13 @@ import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
   providers: [TodolistService, ToastsManager]
 })
 export class ListComponent {
-
-
   todolist: Todo[];
   @Input()
   newItem: string;
   response: Boolean;
   selectedItem: Todo;
   checkedItem: Todo;
+  editMode: boolean;
 
   @ViewChild('editModal')
   editModal: ModalComponent;
@@ -31,7 +30,6 @@ export class ListComponent {
   }
   checkItem(todoitem): void {
     todoitem.isComplete = !todoitem.isComplete;
-    console.log(new Date(todoitem.dateAdded).getTime());
     this.saveAction(false);
   }
 

@@ -14,6 +14,42 @@ body,html{
 .container{
     margin-top: 24px;
 }
+.btn-default:active,.btn-default:focus{
+outline: none !important;
+border:none;
+  box-shadow: 0 4px 7px #999 !important;
+
+}
+.btn-default{
+  border:0;
+  border-radius: 0;
+  box-shadow: 0 2px 2px #999;
+}
+.btn{
+    transition: all .2s;
+}
+.btn-primary{
+  text-transform: uppercase;
+  background-color: #3F51B5;
+  border-radius: 0;
+  border:none;
+  font-weight: lighter;
+  font-size: 17px;
+  box-shadow: 0 2px 2px #999;
+  outline: none;
+}
+.btn-primary:hover{
+ background-color: #5C6BC0;
+  box-shadow: 0 3px 4px #999;
+}
+.btn-primary:focus,.btn-primary:active{
+  outline: none !important;
+  background: #3949AB !important;
+  box-shadow: 0 4px 7px #999 !important;
+}
+.btn.btn-primary.edActive{
+  background-color: #B71C1C !important;
+}
 .mainh{
   color:#fff;
   background: #3F51B5;
@@ -24,7 +60,6 @@ body,html{
    text-align:center; 
    font-weight: 300;
   }
-
 input {
   width: 100%;
   border:none;
@@ -56,6 +91,7 @@ input {
 
 /* Form wrapper styling */
 .form-wrapper {
+  margin-top: 10px;
     width: 100%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     white-space: nowrap;
     margin-bottom: 4px;
@@ -64,7 +100,7 @@ input {
     font-weight: bold;
 }
 .dateAdded{
-    float:right;
+    text-align:right;
 }
 .btnDelete{
     cursor: pointer;
@@ -113,8 +149,20 @@ input {
 }
 .item{
   padding: 16px;
-    transition: all .2s;
-  border-bottom: 1px solid #ddd;  
+  transition: all .2s;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+.mobHov{
+  padding-right: 120px;
+}
+.mobHov .btnDelete{
+    right:0;
+}
+.mobHov .btnEdit{
+    right:60px;
 }
 .item .content{
   transition: all .2s;
@@ -138,6 +186,32 @@ input {
 .item.checked .content{
   color:#888;
   padding-left: 32px;
+}
+.footer{
+  padding-top: 20px;
+  margin-top: 20px;
+  background-color: #3F51B5;
+  color:#fff;
+}
+.social-list{
+  list-style: none !important;
+  padding:0;
+}
+.social-text{
+  color:#fff;
+}
+h5{
+  font-size: 25px;
+}
+.footer-copyright{
+  background:#3949AB;
+  color:#fff;
+  font-size:15px;
+  height:50px;
+  line-height: 50px;
+}
+.footer-copyright a{
+  color:#fff;
 }
 .item.checked .content::before{
   position: absolute;
@@ -209,125 +283,3 @@ input {
     border: 0;
     padding: 0;
 }    
-
-my-app:empty + .spinwrap{
-    margin-top: -86px;
-	height:100vh;
-}
-.spinwrap {
-	overflow:hidden;
-		height:0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.spinner {
-  -webkit-animation: rotator 1.4s linear infinite;
-          animation: rotator 1.4s linear infinite;
-}
-
-@-webkit-keyframes rotator {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
-  }
-}
-
-@keyframes rotator {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
-  }
-}
-.path {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-}
-
-@-webkit-keyframes colors {
-  0% {
-    stroke: #4285F4;
-  }
-  25% {
-    stroke: #DE3E35;
-  }
-  50% {
-    stroke: #F7C223;
-  }
-  75% {
-    stroke: #1B9A59;
-  }
-  100% {
-    stroke: #4285F4;
-  }
-}
-
-@keyframes colors {
-  0% {
-    stroke: #4285F4;
-  }
-  25% {
-    stroke: #DE3E35;
-  }
-  50% {
-    stroke: #F7C223;
-  }
-  75% {
-    stroke: #1B9A59;
-  }
-  100% {
-    stroke: #4285F4;
-  }
-}
-@-webkit-keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    -webkit-transform: rotate(450deg);
-            transform: rotate(450deg);
-  }
-}
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    -webkit-transform: rotate(450deg);
-            transform: rotate(450deg);
-  }
-}
