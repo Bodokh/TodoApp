@@ -25,6 +25,8 @@
 npm-debug.log
 testem.log
 /typings
+/src/assets/bootstrap/
+/src/assets/font-awesome-4.6.3/
 
 # e2e
 /e2e/*.js
